@@ -1,6 +1,6 @@
 const request = require('request');
-const config = require('../config.js');
-// const db = require('../database'); 
+// const config = require('../config.js');
+
 
 let getReposByUsername = (username, callback) => {
   // TODO - Use the request module to request repos for a specific
@@ -13,7 +13,7 @@ let getReposByUsername = (username, callback) => {
     url: `https://api.github.com/users/${username}/repos`,
     headers: {
       'User-Agent': 'request',
-      'Authorization': `token ${config.TOKEN}`
+      'Authorization': `token ${process.env.GITHUB_TOKEN}`
     }
   };
 
